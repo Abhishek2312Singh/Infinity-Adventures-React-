@@ -1,6 +1,7 @@
 /********** Template CSS **********/
 body{
-    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Poppins', sans-serif; */
+    font-family: "Nunito", sans-serif;
 }
 :root {
     --primary: #86B817;
@@ -8,6 +9,15 @@ body{
     --light: #F5F5F5;
     --dark: #14141F;
 }
+
+
+.nunito{
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 801;
+  font-style: normal;
+}
+
 
 .fw-medium {
     font-weight: 600 !important;

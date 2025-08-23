@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 
 
 export default function Navbar() {
-    const [isActive,setActive] = useState('/')
+    const [isActive,setActive] = useState('')
   return (
     <div>
        <div className="container-fluid bg-dark px-5 d-none d-lg-block">
@@ -38,7 +38,7 @@ export default function Navbar() {
 
     <!-- Navbar & Hero Start --> */}
     <div className="container-fluid position-relative p-0">
-        <nav className="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+        <nav className="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0" style={{backgroundColor:"white"}}>
             <Link to="#" className="navbar-brand p-0">
                 <img src={Logo1} style={{width: 120+'px', height:400+'px'}} alt="Logo"/>
             </Link>
