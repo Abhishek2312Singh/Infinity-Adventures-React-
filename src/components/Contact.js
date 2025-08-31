@@ -20,7 +20,7 @@ export default function Contact() {
         checkInDate
      };
      try{
-        const response = await fetch("http://localhost:80/form/add",{
+        const response = await fetch("http://13.60.11.106/form/add",{
             method : "Post",
             headers : {
                 "Content-type" : "application/json",

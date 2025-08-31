@@ -17,12 +17,12 @@ export default function Navbar() {
               className="d-inline-flex align-items-center"
               style={{ height: 50 + "px",  width:"1000px"}}
             >
-              <small class="me-3 text-light" style={{width:"380px", fontSize:"14px"}}>
-                <i class="fa fa-map-marker-alt me-2"></i>402, Plot No.170, N D
+              <small className="me-3 text-light" style={{width:"380px", fontSize:"14px"}}>
+                <i className="fa fa-map-marker-alt me-2"></i>402, Plot No.170, N D
                 Garden Tower, Sector 9, Ulwe Navi Mumbai (Maharashtra)-410206
               </small>
               <div
-                class="row"
+                className="row"
                 style={{
                   display: "flex",
                   justifyContent: "center",
@@ -35,18 +35,18 @@ export default function Navbar() {
                   target="_blank"
                   className="hyper"
                 >
-                  <small class="me-3">
+                  <small className="me-3">
                     <img
                       src={India}
                       style={{ width: "20px", height: "20px", color: "white" }}
-                      class="me-1"
-                      alt
+                      className="me-1"
+                      alt=""
                     />
                     +91 99203 05057
                   </small>
                 </Link>
-                <a href>
-                  <small class="me-3" style={{ color: "white" }}>
+                <a href="">
+                  <small className="me-3" style={{ color: "white" }}>
                     <img
                       src={Dubai}
                       style={{
@@ -54,8 +54,8 @@ export default function Navbar() {
                         height: "15px",
                         border: "1px solid white",
                       }}
-                      class="me-1"
-                      alt
+                      className="me-1"
+                      alt=""
                     />
                     +971 554591787
                   </small>

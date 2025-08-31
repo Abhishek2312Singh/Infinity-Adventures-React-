@@ -52,46 +52,46 @@ export default function Services() {
                         </div>
                     </div>
                 </div> 
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp"
+                    <div className="col-lg-3 col-sm-6 wow fadeInUp"
                         data-wow-delay="0.1s">
-                        <div class="service-item rounded pt-3" >
-                            <div class="p-4">
+                        <div className="service-item rounded pt-3" >
+                            <div className="p-4">
                                 <i
-                                    class="fa-3x fa-solid fa-suitcase-rolling text mb-4"
+                                    className="fa-3x fa-solid fa-suitcase-rolling text mb-4"
                                     style={{color: "#34a4eb"}}></i>
                                 <h5>Packages</h5>
                                 <p></p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp"
+                    <div className="col-lg-3 col-sm-6 wow fadeInUp"
                         data-wow-delay="0.3s">
-                        <div class="service-item rounded pt-3">
-                            <div class="p-4">
+                        <div className="service-item rounded pt-3">
+                            <div className="p-4">
                                 <i
-                                    class="fa-3x fa-solid fa-people-group text mb-4"
+                                    className="fa-3x fa-solid fa-people-group text mb-4"
                                     style={{color: "#34a4eb"}}></i>
                                 <h5>MICE</h5>
                                 <p></p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp"
+                    <div className="col-lg-3 col-sm-6 wow fadeInUp"
                         data-wow-delay="0.5s">
-                        <div class="service-item rounded pt-3">
-                            <div class="p-4">
-                                <i class="fa-3x fa-solid fa-plane text mb-4"
+                        <div className="service-item rounded pt-3">
+                            <div className="p-4">
+                                <i className="fa-3x fa-solid fa-plane text mb-4"
                                     style={{color: "#34a4eb"}}></i>
                                 <h5>Flights</h5>
                                 <p> </p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp"
+                    <div className="col-lg-3 col-sm-6 wow fadeInUp"
                         data-wow-delay="0.7s">
-                        <div class="service-item rounded pt-3">
-                            <div class="p-4">
-                                <i class="fa-3x fa-brands fa-cc-visa text mb-4"
+                        <div className="service-item rounded pt-3">
+                            <div className="p-4">
+                                <i className="fa-3x fa-brands fa-cc-visa text mb-4"
                                     style={{color: "#34a4eb"}}></i>
                                 <h5>Visa</h5>
                                 <p> </p>

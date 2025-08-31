@@ -22,19 +22,19 @@ export default function Footer() {
                             (Maharashtra)-410206</p>
                     <div style={{marginBottom:"10px"}}>
                     <Link to="https://api.whatsapp.com/send?phone=919920305057" target="_blank" className="hyper" style={{display:"block", marginBottom:"3px"}}>
-                                <small class="me-3">
+                                <small className="me-3">
                                     <img src={India}
                                         style={{width: "20px",
-                                    height: "20px", color: "white"}} class="me-1"
-                                        alt/>+91
+                                    height: "20px", color: "white"}} className="me-1"
+                                        alt=""/>+91
                                     99203 05057</small>
                                     
                    </Link>
                             <Link to="" className='hyper'>
-                                <small class="me-3" style={{color: "white"}}>
+                                <small className="me-3" style={{color: "white"}}>
                                     <img src={Dubai}
                                         style={{width: "20px",height: "15px", border: "1px solid white"}}
-                                        class="me-1" alt/>+971 554591787
+                                        className="me-1" alt=""/>+971 554591787
                                 </small>
                             </Link>
              </div>
