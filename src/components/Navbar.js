@@ -45,8 +45,8 @@ export default function Navbar() {
                     +91 99203 05057
                   </small>
                 </Link>
-                <a href="">
-                  <small className="me-3" style={{ color: "white" }}>
+                <Link to="" className="hyper">
+                  <small className="me-3" style={{ color: "white"}} >
                     <img
                       src={Dubai}
                       style={{
@@ -59,7 +59,7 @@ export default function Navbar() {
                     />
                     +971 554591787
                   </small>
-                </a>
+                </Link>
               </div>
               <Link
                 to="https://mail.google.com/mail/?view=cm&fs=1&to=sales@infinityadventures.co.in"
