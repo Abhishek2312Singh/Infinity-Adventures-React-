@@ -7,9 +7,77 @@ export default function Contact() {
      const [contact,setContact] = useState("")
      const [checkOutDate,setCheckOutDate] = useState("")
      const [checkInDate,setCheckInDate] = useState("")
+     const [showPopup, setShowPopup] = useState(false)
+     const [popupData, setPopupData] = useState("")
+     const [isSuccess, setIsSuccess] = useState(false)
+     const [errors, setErrors] = useState({})
+     const [isValidating, setIsValidating] = useState(false)
 
+     // Validation functions
+     const validateEmail = (email) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+     }
+
+     const validateMobile = (mobile) => {
+        const mobileRegex = /^\d{10}$/;
+        return mobileRegex.test(mobile);
+     }
+
+     const validateForm = () => {
+        const newErrors = {};
+        
+        // First name validation
+        if (!firstName.trim()) {
+            newErrors.firstName = "First name is required";
+        }
+        
+        // Last name validation
+        if (!lastName.trim()) {
+            newErrors.lastName = "Last name is required";
+        }
+        
+        // Email validation
+        if (!email.trim()) {
+            newErrors.email = "Email is required";
+        } else if (!validateEmail(email)) {
+            newErrors.email = "Please enter a valid email address";
+        }
+        
+        // Mobile validation
+        if (!contact.trim()) {
+            newErrors.contact = "Contact number is required";
+        } else if (!validateMobile(contact)) {
+            newErrors.contact = "Contact number must be valid";
+        }
+        
+        // Check-in date validation
+        if (!checkInDate) {
+            newErrors.checkInDate = "Check-in date is required";
+        }
+        
+        // Check-out date validation
+        // if (!checkOutDate) {
+        //     newErrors.checkOutDate = "Check-out date is required";
+        // } else if (checkInDate && checkOutDate && new Date(checkOutDate) <= new Date(checkInDate)) {
+        //     newErrors.checkOutDate = "Check-out date must be after check-in date";
+        // }
+        
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+     }
      const handle =async (e)=>{
         e.preventDefault()
+        
+        // Clear previous errors
+        setErrors({});
+        setIsValidating(true);
+        
+        // Validate form
+        if (!validateForm()) {
+            setIsValidating(false);
+            return;
+        }
         
         const data = {
         firstName,
@@ -20,7 +88,7 @@ export default function Contact() {
         checkInDate
      };
      try{
-        const response = await fetch("http://13.60.11.106:8080/form/add",{
+        const response = await fetch("http://localhost:80/form/add",{
             method : "Post",
             headers : {
                 "Content-type" : "application/json",
@@ -28,13 +96,37 @@ export default function Contact() {
             body : JSON.stringify(data),
         });
         const result = await response.text();
+        
+        // Show popup with result
+        setPopupData(result);
+        setIsSuccess(response.ok);
+        setShowPopup(true);
+        
+        // Clear form only on success
+        if (response.ok) {
+            setFirstName("")
+            setLastName("")
+            setContact("")
+            setEmail("")
+            setCheckOutDate("")
+            setCheckInDate("")
+        }
+        
         console.log(JSON.stringify(data));
-        alert(result);
      }catch(e){
         console.error("Error:",e);
-        alert(e)
+        setPopupData(`Error: ${e.message}`);
+        setIsSuccess(false);
+        setShowPopup(true);
+     } finally {
+        setIsValidating(false);
      }
 
+     }
+
+     const closePopup = () => {
+        setShowPopup(false);
+        setPopupData("");
      }
 
   const colorStyle = {
@@ -108,6 +200,7 @@ export default function Contact() {
                   <a
                     href="https://api.whatsapp.com/send?phone=919920305057"
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="hyper"
                     style={{ color: "rgb(91, 94, 95)" }}
                   >
@@ -133,6 +226,7 @@ export default function Contact() {
                   <a
                     href="https://mail.google.com/mail/?view=cm&fs=1&to=sales@infinityadventures.co.in"
                     className="hyper"
+                    rel="noopener noreferrer"
                     style={{ color: "rgb(91, 94, 95)" }}
                     target="_blank"
                   >
@@ -144,58 +238,84 @@ export default function Contact() {
             <div className="wow fadeInUp" data-wow-delay="0.1s" style={{display:"inline", width:"500px"}}>
             <form className="container mx-auto" method="post" onSubmit={handle} style={{marginTop:"-25px", maxWidth: "600px" }}>
               <div className="mt-5 row">
-                <label className="form-label">Full Name</label>
+                <label className="form-label">Name :-</label>
                 <div  className="col">
                   <input
                     type="text"
-                     className="form-control"
+                     className={`form-control ${errors.firstName ? 'is-invalid' : ''}`}
                     placeholder="First name"
                     aria-label="First name"
                     id="firstName"
                     value={firstName}
-                    onChange={(e)=>{setFirstName(e.target.value)}}
+                    onChange={(e)=>{
+                      setFirstName(e.target.value);
+                      if (errors.firstName) {
+                        setErrors(prev => ({ ...prev, firstName: '' }));
+                      }
+                    }}
                     required
                   />
+                  {errors.firstName && <div className="invalid-feedback">{errors.firstName}</div>}
                 </div>
                 <div  className="col">
                   <input
                     type="text"
-                     className="form-control"
+                     className={`form-control ${errors.lastName ? 'is-invalid' : ''}`}
                     placeholder="Last name"
                     aria-label="Last name"
                     id="lastName"
                     value={lastName}
-                    onChange={(e)=>{setLastName(e.target.value)}}
+                    onChange={(e)=>{
+                      setLastName(e.target.value);
+                      if (errors.lastName) {
+                        setErrors(prev => ({ ...prev, lastName: '' }));
+                      }
+                    }}
                   />
+                  {errors.lastName && <div className="invalid-feedback">{errors.lastName}</div>}
                 </div>
               </div>
               <div className="mt-3">
                 <label htmlFor="name" className="form-label">
-                  Contact Number
+                  Contact Number :-
                 </label>
                 <input
                   type="text"
-                  className="form-control"
+                  className={`form-control ${errors.contact ? 'is-invalid' : ''}`}
                   id="contact"
-                  placeholder=""
+                  placeholder="Enter your 10-digit contact number"
                   required
                   value={contact}
-                  onChange={(e)=>{setContact(e.target.value)}}
+                  onChange={(e)=>{
+                    const value = e.target.value.replace(/\D/g, ''); // Only allow digits
+                    setContact(value);
+                    if (errors.contact) {
+                      setErrors(prev => ({ ...prev, contact: '' }));
+                    }
+                  }}
+                  maxLength="10"
                 />
+                {errors.contact && <div className="invalid-feedback">{errors.contact}</div>}
               </div>
               <div className="mt-3">
                 <label htmlFor="email" className="form-label">
-                  Email address
+                  Email address :-
                 </label>
                 <input
                 required
                   type="email"
-                  className="form-control"
+                  className={`form-control ${errors.email ? 'is-invalid' : ''}`}
                   id="email"
                   placeholder="name@example.com"
                   value={email}
-                  onChange={(e)=>{setEmail(e.target.value)}}
+                  onChange={(e)=>{
+                    setEmail(e.target.value);
+                    if (errors.email) {
+                      setErrors(prev => ({ ...prev, email: '' }));
+                    }
+                  }}
                 />
+                {errors.email && <div className="invalid-feedback">{errors.email}</div>}
               </div>
 
               <div className="mt-3">
@@ -218,12 +338,18 @@ export default function Contact() {
                   </label>
                   <input
                     type="date"
-                    className="form-control"
+                    className={`form-control ${errors.checkInDate ? 'is-invalid' : ''}`}
                     id="checkInDate"
                     required
                     value={checkInDate}
-                    onChange={(e)=>{setCheckInDate(e.target.value)}}
+                    onChange={(e)=>{
+                      setCheckInDate(e.target.value);
+                      if (errors.checkInDate) {
+                        setErrors(prev => ({ ...prev, checkInDate: '' }));
+                      }
+                    }}
                   />
+                  {errors.checkInDate && <div className="invalid-feedback">{errors.checkInDate}</div>}
                 </div>
 
                 {/* Check-out */}
@@ -233,22 +359,138 @@ export default function Contact() {
                   </label>
                   <input
                     type="date"
-                    className="form-control"
+                    className={`form-control ${errors.checkOutDate ? 'is-invalid' : ''}`}
                     id="checkOutDate"
                     value={checkOutDate}
-                    onChange={(e)=>{setCheckOutDate(e.target.value)}}
+                    onChange={(e)=>{
+                      setCheckOutDate(e.target.value);
+                      if (errors.checkOutDate) {
+                        setErrors(prev => ({ ...prev, checkOutDate: '' }));
+                      }
+                    }}
                   />
+                  {errors.checkOutDate && <div className="invalid-feedback">{errors.checkOutDate}</div>}
                 </div>
               </div>
 
-              <button type="submit"  className="btn btn-primary mt-3">
-                Submit
+              <button 
+                type="submit"  
+                className="btn btn-primary mt-3"
+                disabled={isValidating}
+                style={{ 
+                  opacity: isValidating ? 0.6 : 1,
+                  cursor: isValidating ? 'not-allowed' : 'pointer'
+                }}
+              >
+                {isValidating ? 'Submitting...' : 'Submit'}
               </button>
             </form>
           </div>
           </div>
         </div>
       </div>
+
+      {/* Popup Modal */}
+      {showPopup && (
+        <div className="popup-overlay" style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          backgroundColor: 'rgba(0, 0, 0, 0.5)',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          zIndex: 9999
+        }}>
+          <div className="popup-content" style={{
+            backgroundColor: 'white',
+            padding: '30px',
+            borderRadius: '10px',
+            maxWidth: '500px',
+            width: '90%',
+            maxHeight: '80vh',
+            overflow: 'auto',
+            position: 'relative',
+            boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)'
+          }}>
+            <button 
+              onClick={closePopup}
+              style={{
+                position: 'absolute',
+                top: '10px',
+                right: '15px',
+                background: 'none',
+                border: 'none',
+                fontSize: '24px',
+                cursor: 'pointer',
+                color: '#666'
+              }}
+            >
+              ×
+            </button>
+            
+            <div style={{ textAlign: 'center', marginBottom: '20px' }}>
+              <div style={{
+                width: '60px',
+                height: '60px',
+                borderRadius: '50%',
+                backgroundColor: isSuccess ? '#28a745' : '#dc3545',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                margin: '0 auto 20px',
+                fontSize: '30px',
+                color: 'white'
+              }}>
+                {isSuccess ? '✓' : '✗'}
+              </div>
+              <h4 style={{ 
+                color: isSuccess ? '#28a745' : '#dc3545',
+                marginBottom: '10px'
+              }}>
+                {isSuccess ? 'Success!' : 'Error!'}
+              </h4>
+            </div>
+            
+            <div style={{
+              backgroundColor: '#f8f9fa',
+              padding: '15px',
+              borderRadius: '5px',
+              border: `1px solid ${isSuccess ? '#d4edda' : '#f5c6cb'}`,
+              marginBottom: '20px'
+            }}>
+              <p style={{ 
+                margin: 0, 
+                color: '#333',
+                wordBreak: 'break-word'
+              }}>
+                {popupData}
+              </p>
+            </div>
+            
+            <div style={{ textAlign: 'center' }}>
+              <button 
+                onClick={closePopup}
+                style={{
+                  backgroundColor: '#34a4eb',
+                  color: 'white',
+                  border: 'none',
+                  padding: '10px 30px',
+                  borderRadius: '5px',
+                  cursor: 'pointer',
+                  fontSize: '16px'
+                }}
+                onMouseOver={(e) => e.target.style.backgroundColor = '#2980b9'}
+                onMouseOut={(e) => e.target.style.backgroundColor = '#34a4eb'}
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

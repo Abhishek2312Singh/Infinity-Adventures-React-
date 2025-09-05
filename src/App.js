@@ -8,7 +8,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link
+  // Link
 } from "react-router-dom";
 
 import About from './components/About';
@@ -20,6 +20,7 @@ import Packages from './components/Packages';
 import Process from './components/Process';
 import Contact from './components/Contact';
 import Hero from './components/Hero';
+import PackageManager from './components/TripManager';
 
 
 function App() {
@@ -70,6 +71,13 @@ function App() {
           <React.Fragment>
             <Hero data="About Us" tagLine="This is the information about the company."/>
             <About/>
+          </React.Fragment>
+        }/>
+
+        <Route path='/manage-packages' element={
+          <React.Fragment>
+            <Hero data="Package Management" tagLine="Manage your travel packages."/>
+            <PackageManager/>
           </React.Fragment>
         }/>
         

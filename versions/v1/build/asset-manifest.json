@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.83b95fd7.css",
+    "main.js": "/static/js/main.0ffe4994.js",
+    "static/js/453.b3c4f3ce.chunk.js": "/static/js/453.b3c4f3ce.chunk.js",
+    "static/media/dubai.jpg": "/static/media/dubai.dc1961f60a002dc68407.jpg",
+    "static/media/goa.jpg": "/static/media/goa.682760407b48268aac55.jpg",
+    "static/media/uttrakhand-1.jpg": "/static/media/uttrakhand-1.ec8742ce68c25a481a6a.jpg",
+    "static/media/bg-hero.jpg": "/static/media/bg-hero.df45aef648a0bde42091.jpg",
+    "static/media/thailand.jpg": "/static/media/thailand.011414ddd20b8806f63c.jpg",
+    "static/media/logo-1.png": "/static/media/logo-1.690f9b3737d7f3012570.png",
+    "static/media/booking.jpg": "/static/media/booking.b2b89430755a9b7a1b5a.jpg",
+    "static/media/about-img.jpg": "/static/media/about-img.1ee434f04fbe93134297.jpg",
+    "index.html": "/index.html",
+    "static/media/india_call.svg": "/static/media/india_call.b9b8f721744e07dd9a2e1b0c30d6cd0b.svg",
+    "main.83b95fd7.css.map": "/static/css/main.83b95fd7.css.map",
+    "main.0ffe4994.js.map": "/static/js/main.0ffe4994.js.map",
+    "453.b3c4f3ce.chunk.js.map": "/static/js/453.b3c4f3ce.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.83b95fd7.css",
+    "static/js/main.0ffe4994.js"
+  ]
+}
