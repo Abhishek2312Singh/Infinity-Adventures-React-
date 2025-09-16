@@ -44,9 +44,9 @@ function App() {
           <React.Fragment>
             <DynamicBanner/>
             <HomeAbout/>
-            <Services/>
             <PopularDestination/>
             <Packages/>
+            <Services/>
             <Process/>
           </React.Fragment>
           }

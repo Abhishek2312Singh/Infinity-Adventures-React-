@@ -1429,35 +1429,7 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(-3px);
 }
 
-/* Image Indicators */
-.hero-indicators {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-    z-index: 3;
-}
-
-.indicator {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    border: 2px solid white;
-    background: transparent;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.indicator.active {
-    background: white;
-    transform: scale(1.2);
-}
-
-.indicator:hover {
-    background: rgba(255, 255, 255, 0.7);
-}
+/* Image Indicators - Removed */
 
 /* Navigation Arrows */
 .hero-nav {
@@ -1603,9 +1575,7 @@ h1, h2, h3, h4, h5, h6 {
         right: 15px;
     }
     
-    .hero-indicators {
-        bottom: 20px;
-    }
+    /* Indicators removed */
 }
 
 @media (max-width: 576px) {

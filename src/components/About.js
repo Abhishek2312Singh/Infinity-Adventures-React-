@@ -282,7 +282,7 @@ export default function About(props) {
             </div>
 
             {/* Testimonials Section */}
-            <div className="container-xxl py-5" style={{backgroundColor: '#f8f9fa'}}>
+            {/* <div className="container-xxl py-5" style={{backgroundColor: '#f8f9fa'}}>
                 <div className="container">
                     <div className="text-center mb-5">
                         <h6 className="section-title bg-white text-center text px-3" style={colorStyle}>Testimonials</h6>
@@ -361,7 +361,7 @@ export default function About(props) {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             {/* Call to Action Section */}
             <div className="container-xxl py-5" style={{background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'}}>

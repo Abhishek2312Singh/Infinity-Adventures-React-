@@ -29,14 +29,14 @@ export default function DynamicBanner() {
       button2: { text: 'Book Now', icon: 'fa-calendar', link: '/contact' }
     },
     {
-      image: '/maldives-1.jpg',
+      image: '/maldives-1.jpeg',
       title: 'Maldives Paradise',
       subtitle: 'Relax in overwater bungalows with crystal clear waters.',
       button1: { text: 'Luxury Stay', icon: 'fa-water', link: '/packages' },
       button2: { text: 'Reserve', icon: 'fa-star', link: '/contact' }
     },
     {
-      image: '/singapore-1.jpg',
+      image: '/singapore-1.jpeg',
       title: 'Visit Singapore',
       subtitle: 'Discover the futuristic city with iconic landmarks and gardens.',
       button1: { text: 'City Tours', icon: 'fa-city', link: '/packages' },
@@ -133,16 +133,6 @@ export default function DynamicBanner() {
         </div>
       </div>
 
-      {/* Image Indicators */}
-      <div className="hero-indicators">
-        {bannerData.map((_, index) => (
-          <button
-            key={index}
-            className={`indicator ${index === currentImageIndex ? 'active' : ''}`}
-            onClick={() => handleImageChange(index)}
-          />
-        ))}
-      </div>
 
       {/* Navigation Arrows */}
       <button 
