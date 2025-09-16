@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
 import './style.css';
+import './modern-styles.css';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
@@ -19,8 +20,13 @@ import PopularDestination from './components/PopularDestination';
 import Packages from './components/Packages';
 import Process from './components/Process';
 import Contact from './components/Contact';
-import Hero from './components/Hero';
 import PackageManager from './components/TripManager';
+import Login from './components/Login';
+import Signup from './components/Signup';
+import Dashboard from './components/Dashboard';
+import ProtectedRoute from './components/ProtectedRoute';
+import ScrollToTop from './components/ScrollToTop';
+import DynamicBanner from './components/DynamicBanner';
 
 
 function App() {
@@ -30,12 +36,13 @@ function App() {
     <>
     
     <Router>
+    <ScrollToTop />
     <Navbar/>
     
       <Routes>
         <Route exact path='/' element={
           <React.Fragment>
-            <Hero data="Enjoy Your Vacation With Us" tagLine="We're Here to Help You Plan Your Dream Trip."/>
+            <DynamicBanner/>
             <HomeAbout/>
             <Services/>
             <PopularDestination/>
@@ -46,7 +53,6 @@ function App() {
         />
         <Route path='/services' element={
           <React.Fragment>
-            <Hero data="Services" tagLine="Services provided by us."/>
             <Services/>
             <PopularDestination/>
           </React.Fragment>
@@ -54,7 +60,6 @@ function App() {
 
         <Route path='/packages' element={
           <React.Fragment>
-            <Hero data="Packages" tagLine="Packages provided by us."/>
             <Packages/>
             <Process/>
           </React.Fragment>
@@ -62,23 +67,40 @@ function App() {
 
         <Route path='/contact' element={
           <React.Fragment>
-          <Hero data = "Contact Us" tagLine="You can contact us via email and whatsapp."/>
           <Contact/>
           </React.Fragment>
         }/>
 
         <Route path='/about' element={
           <React.Fragment>
-            <Hero data="About Us" tagLine="This is the information about the company."/>
             <About/>
           </React.Fragment>
         }/>
 
         <Route path='/manage-packages' element={
           <React.Fragment>
-            <Hero data="Package Management" tagLine="Manage your travel packages."/>
             <PackageManager/>
           </React.Fragment>
+        }/>
+
+        <Route path='/login' element={
+          <React.Fragment>
+            <Login/>
+          </React.Fragment>
+        }/>
+
+        <Route path='/signup' element={
+          <React.Fragment>
+            <Signup/>
+          </React.Fragment>
+        }/>
+
+        <Route path='/dashboard' element={
+          <ProtectedRoute>
+            <React.Fragment>
+              <Dashboard/>
+            </React.Fragment>
+          </ProtectedRoute>
         }/>
         
          

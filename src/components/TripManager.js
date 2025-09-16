@@ -8,8 +8,8 @@ const PackageManager = () => {
     package_type: '',
     package_name: '',
     package_duration: '',
-    package_price: '',
-    package_image: ''
+    package_price: ''
+    // package_image: ''
   });
 
   const handleInputChange = (e) => {
@@ -20,39 +20,57 @@ const PackageManager = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
-    if (!formData.package_type || !formData.package_name || !formData.package_duration || !formData.package_price || !formData.package_image) {
+    // Validation
+    if (!formData.package_type || !formData.package_name || !formData.package_duration || !formData.package_price) {
       alert('Please fill in all fields');
       return;
     }
 
-    if (editingId) {
-      // Update existing package
-      setPackages(prev => prev.map(pkg => 
-        pkg.id === editingId 
-          ? { ...formData, id: editingId }
-          : pkg
-      ));
-      setEditingId(null);
-    } else {
-      // Add new package
-      const newPackage = {
-        ...formData,
-        id: Date.now()
-      };
-      setPackages(prev => [...prev, newPackage]);
-    }
+    try {
+      const response = await fetch("http://localhost:80/package/add",{
+        method: "POST",
+        headers:{
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${localStorage.getItem('token')}`
+        },
+        body: JSON.stringify(formData)
+      });
+      const result = await response.text();
+      console.log(result);
 
-    // Reset form
-    setFormData({
-      package_type: '',
-      package_name: '',
-      package_duration: '',
-      package_price: '',
-      package_image: ''
-    });
+      if (response.ok) {
+        if (editingId) {
+          // Update existing package
+          setPackages(prev => prev.map(pkg => 
+            pkg.id === editingId 
+              ? { ...formData, id: editingId }
+              : pkg
+          ));
+          setEditingId(null);
+        } else {
+          // Add new package
+          const newPackage = {
+            ...formData,
+            id: Date.now()
+          };
+          setPackages(prev => [...prev, newPackage]);
+        }
+
+        // Reset form
+        setFormData({
+          package_type: '',
+          package_name: '',
+          package_duration: '',
+          package_price: ''
+        });
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Error submitting package');
+    }
   };
 
   const handleEdit = (pkg) => {
@@ -60,8 +78,7 @@ const PackageManager = () => {
       package_type: pkg.package_type,
       package_name: pkg.package_name,
       package_duration: pkg.package_duration,
-      package_price: pkg.package_price,
-      package_image: pkg.package_image
+      package_price: pkg.package_price
     });
     setEditingId(pkg.id);
   };
@@ -155,7 +172,7 @@ const PackageManager = () => {
                       />
                     </div>
                   </div>
-                  <div className="row">
+                  {/* <div className="row">
                     <div className="col-12 mb-3">
                       <label htmlFor="package_image" className="form-label">Package Image URL</label>
                       <input
@@ -188,7 +205,7 @@ const PackageManager = () => {
                         </div>
                       )}
                     </div>
-                  </div>
+                  </div> */}
                   <div className="d-flex gap-2">
                     <button type="submit" className="btn btn-primary">
                       {editingId ? 'Update Package' : 'Add Package'}

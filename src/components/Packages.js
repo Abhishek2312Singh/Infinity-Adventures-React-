@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Packages() {
     const setColor = {
@@ -14,74 +15,104 @@ export default function Packages() {
             </div>
             <div className="row g-4 justify-content-center">
                 <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div className="package-item">
-                        <div className="overflow-hidden">
-                            <img className="img-fluid" src="/jammu.jpg" alt=""/>
+                    <div className="package-item-modern">
+                        <div className="package-image-container">
+                            <img className="img-fluid package-image" src="/jammu.jpg" alt="Jammu and Kashmir"/>
+                            <div className="package-badge">Popular</div>
                         </div>
-                        <div className="d-flex border-bottom">
-                            <small className="flex-fill text-center border-end py-2"><i className="fa fa-map-marker-alt text me-2" style={setColor}></i>Jammu and Kashmir</small>
-                            <small className="flex-fill text-center border-end py-2"><i className="fa fa-calendar-alt text me-2" style={setColor}></i>3 Days 4 Nights</small>
-                            <small className="flex-fill text-center py-2"><i className="fa fa-user me-2" style={setColor}></i>Per Person</small>
-                        </div>
-                        <div className="text-center p-4">
-                            <h3 className="mb-0">Starting From Rs. 21,999.0</h3>
-                            <div className="mb-3">
-                                <small className="fa fa-star"  style={setColor}></small>
-                                <small className="fa fa-star"  style={setColor}></small>
-                                <small className="fa fa-star"  style={setColor}></small>
-                                <small className="fa fa-star"  style={setColor}></small>
-                                <small className="fa fa-star"  style={setColor}></small>
+                        <div className="package-info">
+                            <div className="package-location">
+                                <i className="fa fa-map-marker-alt me-2" style={setColor}></i>
+                                <span>Jammu and Kashmir</span>
                             </div>
-                            <p>  </p>
-                          
+                            <div className="package-duration">
+                                <i className="fa fa-calendar-alt me-2" style={setColor}></i>
+                                <span>3 Days 4 Nights</span>
+                            </div>
+                            <div className="package-people">
+                                <i className="fa fa-user me-2" style={setColor}></i>
+                                <span>Per Person</span>
+                            </div>
+                        </div>
+                        <div className="package-content">
+                            <h3 className="package-title">Jammu & Kashmir Adventure</h3>
+                            <p className="package-description">Experience the breathtaking beauty of Kashmir with our carefully curated package.</p>
+                            <div className="package-price">
+                                <span className="price-label">Starting from</span>
+                                <span className="price-amount">₹21,999</span>
+                            </div>
+                            <Link to="/contact" className="btn btn-primary package-btn">
+                                <i className="fa fa-compass me-2"></i>
+                                Explore
+                            </Link>
                         </div>
                     </div>
                 </div>
                 <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div className="package-item">
-                        <div className="overflow-hidden">
-                            <img className="img-fluid" src="/goa1.jpg" alt=""/>
+                    <div className="package-item-modern">
+                        <div className="package-image-container">
+                            <img className="img-fluid package-image" src="/goa1.jpg" alt="Goa"/>
+                            <div className="package-badge">Best Seller</div>
                         </div>
-                        <div className="d-flex border-bottom">
-                            <small className="flex-fill text-center border-end py-2"><i className="fa fa-map-marker-alt me-2"style={setColor}></i>Goa</small>
-                            <small className="flex-fill text-center border-end py-2"><i className="fa fa-calendar-alt me-2"style={setColor}></i>5 Days 6 Nights</small>
-                            <small className="flex-fill text-center py-2"><i className="fa fa-user me-2"style={setColor}></i>Per Person</small>
-                        </div>
-                        <div className="text-center p-4">
-                            <h3 className="mb-0">Starting From Rs. 29,999.0</h3>
-                            <div className="mb-3">
-                                <small className="fa fa-star" style={setColor}></small>
-                                <small className="fa fa-star" style={setColor}></small>
-                                <small className="fa fa-star" style={setColor}></small>
-                                <small className="fa fa-star" style={setColor}></small>
-                                <small className="fa fa-star" style={setColor}></small>
+                        <div className="package-info">
+                            <div className="package-location">
+                                <i className="fa fa-map-marker-alt me-2" style={setColor}></i>
+                                <span>Goa</span>
                             </div>
-                            <p>  </p>
-                            
+                            <div className="package-duration">
+                                <i className="fa fa-calendar-alt me-2" style={setColor}></i>
+                                <span>5 Days 6 Nights</span>
+                            </div>
+                            <div className="package-people">
+                                <i className="fa fa-user me-2" style={setColor}></i>
+                                <span>Per Person</span>
+                            </div>
+                        </div>
+                        <div className="package-content">
+                            <h3 className="package-title">Goa Beach Paradise</h3>
+                            <p className="package-description">Relax on pristine beaches and enjoy the vibrant nightlife of Goa.</p>
+                            <div className="package-price">
+                                <span className="price-label">Starting from</span>
+                                <span className="price-amount">₹29,999</span>
+                            </div>
+                            <Link to="/contact" className="btn btn-primary package-btn">
+                                <i className="fa fa-compass me-2"></i>
+                                Explore
+                            </Link>
                         </div>
                     </div>
                 </div>
                 <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div className="package-item">
-                        <div className="overflow-hidden">
-                            <img className="img-fluid" src="/package-3.jpg" alt=""/>
+                    <div className="package-item-modern">
+                        <div className="package-image-container">
+                            <img className="img-fluid package-image" src="/package-3.jpg" alt="Uttrakhand"/>
+                            <div className="package-badge">Budget</div>
                         </div>
-                        <div className="d-flex border-bottom">
-                            <small className="flex-fill text-center border-end py-2"><i className="fa fa-map-marker-alt me-2"style={setColor}></i>Uttrakhand</small>
-                            <small className="flex-fill text-center border-end py-2"><i className="fa fa-calendar-alt me-2"style={setColor}></i>2 Days 3 Nights</small>
-                            <small className="flex-fill text-center py-2"><i className="fa fa-user me-2"style={setColor}></i>Per Person</small>
-                        </div>
-                        <div className="text-center p-4">
-                            <h3 className="mb-0">Starting From Rs. 14,999.0</h3>
-                            <div className="mb-3">
-                                <small className="fa fa-star" style={setColor}></small>
-                                <small className="fa fa-star" style={setColor}></small>
-                                <small className="fa fa-star" style={setColor}></small>
-                                <small className="fa fa-star" style={setColor}></small>
-                                <small className="fa fa-star" style={setColor}></small>
+                        <div className="package-info">
+                            <div className="package-location">
+                                <i className="fa fa-map-marker-alt me-2" style={setColor}></i>
+                                <span>Uttrakhand</span>
                             </div>
-                            <p>  </p>
-                            
+                            <div className="package-duration">
+                                <i className="fa fa-calendar-alt me-2" style={setColor}></i>
+                                <span>2 Days 3 Nights</span>
+                            </div>
+                            <div className="package-people">
+                                <i className="fa fa-user me-2" style={setColor}></i>
+                                <span>Per Person</span>
+                            </div>
+                        </div>
+                        <div className="package-content">
+                            <h3 className="package-title">Uttrakhand Hills</h3>
+                            <p className="package-description">Discover the serene beauty of the Himalayas in Uttrakhand.</p>
+                            <div className="package-price">
+                                <span className="price-label">Starting from</span>
+                                <span className="price-amount">₹14,999</span>
+                            </div>
+                            <Link to="/contact" className="btn btn-primary package-btn">
+                                <i className="fa fa-compass me-2"></i>
+                                Explore
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -90,74 +121,104 @@ export default function Packages() {
 
             <div className="row g-4 justify-content-center" style={{marginTop: '10px'}}>
                 <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div className="package-item">
-                        <div className="overflow-hidden">
-                            <img className="img-fluid" src="/keralmunar.jpg" alt=""/>
+                    <div className="package-item-modern">
+                        <div className="package-image-container">
+                            <img className="img-fluid package-image" src="/keralmunar.jpg" alt="Kerala Munnar"/>
+                            <div className="package-badge">Premium</div>
                         </div>
-                        <div className="d-flex border-bottom">
-                            <small className="flex-fill text-center border-end py-2"><i className="fa fa-map-marker-alt text me-2" style={setColor}></i>Keral Munnar</small>
-                            <small className="flex-fill text-center border-end py-2"><i className="fa fa-calendar-alt text me-2" style={setColor}></i>7 Days 6 Nights</small>
-                            <small className="flex-fill text-center py-2"><i className="fa fa-user   me-2" style={setColor}></i>Per Person</small>
-                        </div>
-                        <div className="text-center p-4">
-                            <h3 className="mb-0">Starting From Rs. 20,999.0</h3>
-                            <div className="mb-3">
-                                <small className="fa fa-star" style={setColor}></small>
-                                <small className="fa fa-star" style={setColor}></small>
-                                <small className="fa fa-star" style={setColor}></small>
-                                <small className="fa fa-star" style={setColor}></small>
-                                <small className="fa fa-star" style={setColor}></small>
+                        <div className="package-info">
+                            <div className="package-location">
+                                <i className="fa fa-map-marker-alt me-2" style={setColor}></i>
+                                <span>Kerala Munnar</span>
                             </div>
-                            <p>  </p>
-                          
+                            <div className="package-duration">
+                                <i className="fa fa-calendar-alt me-2" style={setColor}></i>
+                                <span>7 Days 6 Nights</span>
+                            </div>
+                            <div className="package-people">
+                                <i className="fa fa-user me-2" style={setColor}></i>
+                                <span>Per Person</span>
+                            </div>
+                        </div>
+                        <div className="package-content">
+                            <h3 className="package-title">Kerala Munnar Hills</h3>
+                            <p className="package-description">Experience the tea gardens and misty hills of Kerala's beautiful hill station.</p>
+                            <div className="package-price">
+                                <span className="price-label">Starting from</span>
+                                <span className="price-amount">₹20,999</span>
+                            </div>
+                            <Link to="/contact" className="btn btn-primary package-btn">
+                                <i className="fa fa-compass me-2"></i>
+                                Explore
+                            </Link>
                         </div>
                     </div>
                 </div>
                 <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div className="package-item">
-                        <div className="overflow-hidden">
-                            <img className="img-fluid" src="/mumbai.jpg" alt=""/>
+                    <div className="package-item-modern">
+                        <div className="package-image-container">
+                            <img className="img-fluid package-image" src="/mumbai.jpg" alt="Mumbai"/>
+                            <div className="package-badge">City Tour</div>
                         </div>
-                        <div className="d-flex border-bottom">
-                            <small className="flex-fill text-center border-end py-2"><i className="fa fa-map-marker-alt   me-2"style={setColor}></i>Mumbai</small>
-                            <small className="flex-fill text-center border-end py-2"><i className="fa fa-calendar-alt   me-2"style={setColor}></i>5 Days 4 Nights</small>
-                            <small className="flex-fill text-center py-2"><i className="fa fa-user   me-2"style={setColor}></i>Per Person</small>
-                        </div>
-                        <div className="text-center p-4">
-                            <h3 className="mb-0">Starting From Rs. 18,999.0</h3>
-                            <div className="mb-3">
-                                <small className="fa fa-star  "style={setColor}></small>
-                                <small className="fa fa-star  "style={setColor}></small>
-                                <small className="fa fa-star  "style={setColor}></small>
-                                <small className="fa fa-star  "style={setColor}></small>
-                                <small className="fa fa-star  "style={setColor}></small>
+                        <div className="package-info">
+                            <div className="package-location">
+                                <i className="fa fa-map-marker-alt me-2" style={setColor}></i>
+                                <span>Mumbai</span>
                             </div>
-                            <p>  </p>
-                            
+                            <div className="package-duration">
+                                <i className="fa fa-calendar-alt me-2" style={setColor}></i>
+                                <span>5 Days 4 Nights</span>
+                            </div>
+                            <div className="package-people">
+                                <i className="fa fa-user me-2" style={setColor}></i>
+                                <span>Per Person</span>
+                            </div>
+                        </div>
+                        <div className="package-content">
+                            <h3 className="package-title">Mumbai City Explorer</h3>
+                            <p className="package-description">Discover the vibrant city of Mumbai with its iconic landmarks and bustling markets.</p>
+                            <div className="package-price">
+                                <span className="price-label">Starting from</span>
+                                <span className="price-amount">₹18,999</span>
+                            </div>
+                            <Link to="/contact" className="btn btn-primary package-btn">
+                                <i className="fa fa-compass me-2"></i>
+                                Explore
+                            </Link>
                         </div>
                     </div>
                 </div>
                 <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div className="package-item">
-                        <div className="overflow-hidden">
-                            <img className="img-fluid" src="/darjeeling.jpg" alt=""/>
+                    <div className="package-item-modern">
+                        <div className="package-image-container">
+                            <img className="img-fluid package-image" src="/darjeeling.jpg" alt="Darjeeling"/>
+                            <div className="package-badge">Hill Station</div>
                         </div>
-                        <div className="d-flex border-bottom">
-                            <small className="flex-fill text-center border-end py-2"><i className="fa fa-map-marker-alt   me-2"style={setColor}></i>Darjeeling</small>
-                            <small className="flex-fill text-center border-end py-2"><i className="fa fa-calendar-alt   me-2"style={setColor}></i>3 Days 2 Nights</small>
-                            <small className="flex-fill text-center py-2"><i className="fa fa-user   me-2"style={setColor}></i>Per Person</small>
-                        </div>
-                        <div className="text-center p-4">
-                            <h3 className="mb-0">Starting From Rs. 22,999.0</h3>
-                            <div className="mb-3">
-                                <small className="fa fa-star  "style={setColor}></small>
-                                <small className="fa fa-star  "style={setColor}></small>
-                                <small className="fa fa-star  "style={setColor}></small>
-                                <small className="fa fa-star  "style={setColor}></small>
-                                <small className="fa fa-star  "style={setColor}></small>
+                        <div className="package-info">
+                            <div className="package-location">
+                                <i className="fa fa-map-marker-alt me-2" style={setColor}></i>
+                                <span>Darjeeling</span>
                             </div>
-                            <p>  </p>
-                            
+                            <div className="package-duration">
+                                <i className="fa fa-calendar-alt me-2" style={setColor}></i>
+                                <span>3 Days 2 Nights</span>
+                            </div>
+                            <div className="package-people">
+                                <i className="fa fa-user me-2" style={setColor}></i>
+                                <span>Per Person</span>
+                            </div>
+                        </div>
+                        <div className="package-content">
+                            <h3 className="package-title">Darjeeling Tea Gardens</h3>
+                            <p className="package-description">Enjoy the scenic beauty and famous tea gardens of Darjeeling hills.</p>
+                            <div className="package-price">
+                                <span className="price-label">Starting from</span>
+                                <span className="price-amount">₹22,999</span>
+                            </div>
+                            <Link to="/contact" className="btn btn-primary package-btn">
+                                <i className="fa fa-compass me-2"></i>
+                                Explore
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -172,71 +233,104 @@ export default function Packages() {
             </div>
             <div className="row g-4 justify-content-center">
                 <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div className="package-item">
-                        <div className="overflow-hidden">
-                            <img className="img-fluid" src="/thailand-1.jpg" alt=""/>
+                    <div className="package-item-modern">
+                        <div className="package-image-container">
+                            <img className="img-fluid package-image" src="/thailand-1.jpg" alt="Thailand"/>
+                            <div className="package-badge">Tropical</div>
                         </div>
-                        <div className="d-flex border-bottom">
-                            <small className="flex-fill text-center border-end py-2"><i className="fa fa-map-marker-alt   me-2"style={setColor}></i>Thailand</small>
-                            <small className="flex-fill text-center border-end py-2"><i className="fa fa-calendar-alt   me-2"style={setColor}></i>4 Days 3 Nights</small>
-                            <small className="flex-fill text-center py-2"><i className="fa fa-user   me-2"style={setColor}></i>Per Person</small>
-                        </div>
-                        <div className="text-center p-4">
-                            <h3 className="mb-0">Starting From <br/> Rs. 32,999.00</h3>
-                            <div className="mb-3">
-                                <small className="fa fa-star  "style={setColor}></small>
-                                <small className="fa fa-star  "style={setColor}></small>
-                                <small className="fa fa-star  "style={setColor}></small>
-                                <small className="fa fa-star  "style={setColor}></small>
-                                <small className="fa fa-star  "style={setColor}></small>
+                        <div className="package-info">
+                            <div className="package-location">
+                                <i className="fa fa-map-marker-alt me-2" style={setColor}></i>
+                                <span>Thailand</span>
                             </div>
-                            <p>  </p>
+                            <div className="package-duration">
+                                <i className="fa fa-calendar-alt me-2" style={setColor}></i>
+                                <span>4 Days 3 Nights</span>
+                            </div>
+                            <div className="package-people">
+                                <i className="fa fa-user me-2" style={setColor}></i>
+                                <span>Per Person</span>
+                            </div>
+                        </div>
+                        <div className="package-content">
+                            <h3 className="package-title">Thailand Adventure</h3>
+                            <p className="package-description">Explore the vibrant culture, beautiful beaches, and delicious cuisine of Thailand.</p>
+                            <div className="package-price">
+                                <span className="price-label">Starting from</span>
+                                <span className="price-amount">₹32,999</span>
+                            </div>
+                            <Link to="/contact" className="btn btn-primary package-btn">
+                                <i className="fa fa-compass me-2"></i>
+                                Explore
+                            </Link>
                         </div>
                     </div>
                 </div>
                 <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div className="package-item">
-                        <div className="overflow-hidden">
-                            <img className="img-fluid" src="/maldives-1.jpg" alt=""/>
+                    <div className="package-item-modern">
+                        <div className="package-image-container">
+                            <img className="img-fluid package-image" src="/maldives-1.jpg" alt="Maldives"/>
+                            <div className="package-badge">Luxury</div>
                         </div>
-                        <div className="d-flex border-bottom">
-                            <small className="flex-fill text-center border-end py-2"><i className="fa fa-map-marker-alt   me-2"style={setColor}></i>Maldives</small>
-                            <small className="flex-fill text-center border-end py-2"><i className="fa fa-calendar-alt   me-2"style={setColor}></i>4 Days 3 Nights</small>
-                            <small className="flex-fill text-center py-2"><i className="fa fa-user   me-2"style={setColor}></i>Per Person</small>
-                        </div>
-                        <div className="text-center p-4">
-                            <h3 className="mb-0">Starting From <br/> Rs. 31,999.00</h3>
-                            <div className="mb-3">
-                                <small className="fa fa-star  "style={setColor}></small>
-                                <small className="fa fa-star  "style={setColor}></small>
-                                <small className="fa fa-star  "style={setColor}></small>
-                                <small className="fa fa-star  "style={setColor}></small>
-                                <small className="fa fa-star  "style={setColor}></small>
+                        <div className="package-info">
+                            <div className="package-location">
+                                <i className="fa fa-map-marker-alt me-2" style={setColor}></i>
+                                <span>Maldives</span>
                             </div>
-                            <p>  </p>
+                            <div className="package-duration">
+                                <i className="fa fa-calendar-alt me-2" style={setColor}></i>
+                                <span>4 Days 3 Nights</span>
+                            </div>
+                            <div className="package-people">
+                                <i className="fa fa-user me-2" style={setColor}></i>
+                                <span>Per Person</span>
+                            </div>
+                        </div>
+                        <div className="package-content">
+                            <h3 className="package-title">Maldives Paradise</h3>
+                            <p className="package-description">Experience the ultimate luxury in overwater bungalows and crystal clear waters.</p>
+                            <div className="package-price">
+                                <span className="price-label">Starting from</span>
+                                <span className="price-amount">₹31,999</span>
+                            </div>
+                            <Link to="/contact" className="btn btn-primary package-btn">
+                                <i className="fa fa-compass me-2"></i>
+                                Explore
+                            </Link>
                         </div>
                     </div>
                 </div>
                 <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div className="package-item">
-                        <div className="overflow-hidden">
-                            <img className="img-fluid" src="/dubai-1.jpg" alt=""/>
+                    <div className="package-item-modern">
+                        <div className="package-image-container">
+                            <img className="img-fluid package-image" src="/dubai-1.jpg" alt="Dubai"/>
+                            <div className="package-badge">Premium</div>
                         </div>
-                        <div className="d-flex border-bottom">
-                            <small className="flex-fill text-center border-end py-2"><i className="fa fa-map-marker-alt   me-2"style={setColor}></i>Dubai</small>
-                            <small className="flex-fill text-center border-end py-2"><i className="fa fa-calendar-alt   me-2"style={setColor}></i>3 Days 4 Nights</small>
-                            <small className="flex-fill text-center py-2"><i className="fa fa-user   me-2"style={setColor}></i>Per Person</small>
-                        </div>
-                        <div className="text-center p-4">
-                            <h3 className="mb-0">Starting From <br/> Rs. 51,999.00</h3>
-                            <div className="mb-3">
-                                <small className="fa fa-star  "style={setColor}></small>
-                                <small className="fa fa-star  "style={setColor}></small>
-                                <small className="fa fa-star  "style={setColor}></small>
-                                <small className="fa fa-star  "style={setColor}></small>
-                                <small className="fa fa-star  "style={setColor}></small>
+                        <div className="package-info">
+                            <div className="package-location">
+                                <i className="fa fa-map-marker-alt me-2" style={setColor}></i>
+                                <span>Dubai</span>
                             </div>
-                            <p>  </p>
+                            <div className="package-duration">
+                                <i className="fa fa-calendar-alt me-2" style={setColor}></i>
+                                <span>3 Days 4 Nights</span>
+                            </div>
+                            <div className="package-people">
+                                <i className="fa fa-user me-2" style={setColor}></i>
+                                <span>Per Person</span>
+                            </div>
+                        </div>
+                        <div className="package-content">
+                            <h3 className="package-title">Dubai City of Gold</h3>
+                            <p className="package-description">Discover the modern marvels and luxury shopping in the heart of the Middle East.</p>
+                            <div className="package-price">
+                                <span className="price-label">Starting from</span>
+                                <span className="price-amount">₹51,999</span>
+                            </div>
+                            <Link to="/contact" className="btn btn-primary package-btn">
+                                <i className="fa fa-compass me-2"></i>
+                                Explore
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -244,71 +338,104 @@ export default function Packages() {
 
             <div className="row g-4 justify-content-center" style={{marginTop: '10px'}}>
                 <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div className="package-item">
-                        <div className="overflow-hidden">
-                            <img className="img-fluid" src="/malasia-1.jpg" alt=""/>
+                    <div className="package-item-modern">
+                        <div className="package-image-container">
+                            <img className="img-fluid package-image" src="/malasia-1.jpg" alt="Malaysia"/>
+                            <div className="package-badge">Cultural</div>
                         </div>
-                        <div className="d-flex border-bottom">
-                            <small className="flex-fill text-center border-end py-2"><i className="fa fa-map-marker-alt   me-2"style={setColor} ></i>Malasia</small>
-                            <small className="flex-fill text-center border-end py-2"><i className="fa fa-calendar-alt   me-2"style={setColor} ></i>4 Days 3 Nights</small>
-                            <small className="flex-fill text-center py-2"><i className="fa fa-user   me-2"style={setColor} ></i>Per Person</small>
-                        </div>
-                        <div className="text-center p-4">
-                            <h3 className="mb-0">Starting From <br/> Rs. 21,999.00</h3>
-                            <div className="mb-3">
-                                <small className="fa fa-star  "style={setColor} ></small>
-                                <small className="fa fa-star  "style={setColor} ></small>
-                                <small className="fa fa-star  "style={setColor} ></small>
-                                <small className="fa fa-star  "style={setColor} ></small>
-                                <small className="fa fa-star  "style={setColor} ></small>
+                        <div className="package-info">
+                            <div className="package-location">
+                                <i className="fa fa-map-marker-alt me-2" style={setColor}></i>
+                                <span>Malaysia</span>
                             </div>
-                            <p>  </p>
+                            <div className="package-duration">
+                                <i className="fa fa-calendar-alt me-2" style={setColor}></i>
+                                <span>4 Days 3 Nights</span>
+                            </div>
+                            <div className="package-people">
+                                <i className="fa fa-user me-2" style={setColor}></i>
+                                <span>Per Person</span>
+                            </div>
+                        </div>
+                        <div className="package-content">
+                            <h3 className="package-title">Malaysia Cultural Tour</h3>
+                            <p className="package-description">Experience the diverse culture, modern cities, and tropical rainforests of Malaysia.</p>
+                            <div className="package-price">
+                                <span className="price-label">Starting from</span>
+                                <span className="price-amount">₹21,999</span>
+                            </div>
+                            <Link to="/contact" className="btn btn-primary package-btn">
+                                <i className="fa fa-compass me-2"></i>
+                                Explore
+                            </Link>
                         </div>
                     </div>
                 </div>
                 <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div className="package-item">
-                        <div className="overflow-hidden">
-                            <img className="img-fluid" src="/singapore-1.jpg" alt=""/>
+                    <div className="package-item-modern">
+                        <div className="package-image-container">
+                            <img className="img-fluid package-image" src="/singapore-1.jpg" alt="Singapore"/>
+                            <div className="package-badge">Modern</div>
                         </div>
-                        <div className="d-flex border-bottom">
-                            <small className="flex-fill text-center border-end py-2"><i className="fa fa-map-marker-alt   me-2"style={setColor}></i>Singapore</small>
-                            <small className="flex-fill text-center border-end py-2"><i className="fa fa-calendar-alt   me-2"style={setColor}></i>5 Days 4 Nights</small>
-                            <small className="flex-fill text-center py-2"><i className="fa fa-user   me-2"style={setColor}></i>Per Person</small>
-                        </div>
-                        <div className="text-center p-4">
-                            <h3 className="mb-0">Starting From <br/> Rs. 41,999.00</h3>
-                            <div className="mb-3">
-                                <small className="fa fa-star  "style={setColor}></small>
-                                <small className="fa fa-star  "style={setColor}></small>
-                                <small className="fa fa-star  "style={setColor}></small>
-                                <small className="fa fa-star  "style={setColor}></small>
-                                <small className="fa fa-star  "style={setColor}></small>
+                        <div className="package-info">
+                            <div className="package-location">
+                                <i className="fa fa-map-marker-alt me-2" style={setColor}></i>
+                                <span>Singapore</span>
                             </div>
-                            <p>  </p>
+                            <div className="package-duration">
+                                <i className="fa fa-calendar-alt me-2" style={setColor}></i>
+                                <span>5 Days 4 Nights</span>
+                            </div>
+                            <div className="package-people">
+                                <i className="fa fa-user me-2" style={setColor}></i>
+                                <span>Per Person</span>
+                            </div>
+                        </div>
+                        <div className="package-content">
+                            <h3 className="package-title">Singapore City State</h3>
+                            <p className="package-description">Discover the futuristic city with its iconic landmarks, gardens, and world-class attractions.</p>
+                            <div className="package-price">
+                                <span className="price-label">Starting from</span>
+                                <span className="price-amount">₹41,999</span>
+                            </div>
+                            <Link to="/contact" className="btn btn-primary package-btn">
+                                <i className="fa fa-compass me-2"></i>
+                                Explore
+                            </Link>
                         </div>
                     </div>
                 </div>
                 <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div className="package-item">
-                        <div className="overflow-hidden">
-                            <img className="img-fluid" src="/vietnam-1.jpg" alt=""/>
+                    <div className="package-item-modern">
+                        <div className="package-image-container">
+                            <img className="img-fluid package-image" src="/vietnam-1.jpg" alt="Vietnam"/>
+                            <div className="package-badge">Heritage</div>
                         </div>
-                        <div className="d-flex border-bottom">
-                            <small className="flex-fill text-center border-end py-2"><i className="fa fa-map-marker-alt   me-2"style={setColor}></i>Vietnam</small>
-                            <small className="flex-fill text-center border-end py-2"><i className="fa fa-calendar-alt   me-2"style={setColor}></i>6 Days 5 Nights</small>
-                            <small className="flex-fill text-center py-2"><i className="fa fa-user   me-2"style={setColor}></i>Per Person</small>
-                        </div>
-                        <div className="text-center p-4">
-                            <h3 className="mb-0">Starting From <br/> Rs. 80,999.00</h3>
-                            <div className="mb-3">
-                                <small className="fa fa-star  "style={setColor}></small>
-                                <small className="fa fa-star  "style={setColor}></small>
-                                <small className="fa fa-star  "style={setColor}></small>
-                                <small className="fa fa-star  "style={setColor}></small>
-                                <small className="fa fa-star  "style={setColor}></small>
+                        <div className="package-info">
+                            <div className="package-location">
+                                <i className="fa fa-map-marker-alt me-2" style={setColor}></i>
+                                <span>Vietnam</span>
                             </div>
-                            <p>  </p>
+                            <div className="package-duration">
+                                <i className="fa fa-calendar-alt me-2" style={setColor}></i>
+                                <span>6 Days 5 Nights</span>
+                            </div>
+                            <div className="package-people">
+                                <i className="fa fa-user me-2" style={setColor}></i>
+                                <span>Per Person</span>
+                            </div>
+                        </div>
+                        <div className="package-content">
+                            <h3 className="package-title">Vietnam Heritage Tour</h3>
+                            <p className="package-description">Explore the rich history, stunning landscapes, and vibrant culture of Vietnam.</p>
+                            <div className="package-price">
+                                <span className="price-label">Starting from</span>
+                                <span className="price-amount">₹80,999</span>
+                            </div>
+                            <Link to="/contact" className="btn btn-primary package-btn">
+                                <i className="fa fa-compass me-2"></i>
+                                Explore
+                            </Link>
                         </div>
                     </div>
                 </div>

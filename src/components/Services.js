@@ -17,87 +17,101 @@ export default function Services() {
             </div>
             <div className="row g-4">
                 <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div className="service-item rounded pt-3">
-                        <div className="p-4">
-                            <i className="fa fa-3x fa-globe text mb-4" style={setColor}></i>
+                    <div className="service-item-modern">
+                        <div className="service-icon">
+                            <i className="fa fa-globe"></i>
+                        </div>
+                        <div className="service-content">
                             <h5>WorldWide Tours</h5>
-                            <p></p>
+                            <p>Explore the world with our comprehensive tour packages to destinations across the globe.</p>
+                            <a href="#" className="service-link">Learn More <i className="fa fa-arrow-right"></i></a>
                         </div>
                     </div> 
                 </div>
                 <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div className="service-item rounded pt-3">
-                        <div className="p-4">
-                            <i className="fa fa-3x fa-hotel text mb-4" style={setColor}></i>
+                    <div className="service-item-modern">
+                        <div className="service-icon">
+                            <i className="fa fa-hotel"></i>
+                        </div>
+                        <div className="service-content">
                             <h5>Hotel Reservation</h5>
-                            <p></p>
+                            <p>Book premium accommodations with our extensive network of partner hotels worldwide.</p>
+                            <a href="#" className="service-link">Learn More <i className="fa fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
                 <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div className="service-item rounded pt-3">
-                        <div className="p-4">
-                            <i className="fa fa-3x fa-user text mb-4" style={setColor}></i>
+                    <div className="service-item-modern">
+                        <div className="service-icon">
+                            <i className="fa fa-user"></i>
+                        </div>
+                        <div className="service-content">
                             <h5>Travel Guides</h5>
-                            <p> </p>
+                            <p>Professional local guides to enhance your travel experience with insider knowledge.</p>
+                            <a href="#" className="service-link">Learn More <i className="fa fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
                 <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div className="service-item rounded pt-3" style={{height:"180px"}}>
-                        <div className="p-4">
-                            <i className="fa fa-3x fa-cog text mb-4" style={setColor}></i>
-                            <h5>Corporate Event Management</h5>
-                            <p> </p>
+                    <div className="service-item-modern">
+                        <div className="service-icon">
+                            <i className="fa fa-cog"></i>
+                        </div>
+                        <div className="service-content">
+                            <h5>Corporate Events</h5>
+                            <p>Complete event management solutions for corporate meetings, conferences, and retreats.</p>
+                            <a href="#" className="service-link">Learn More <i className="fa fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div> 
-                    <div className="col-lg-3 col-sm-6 wow fadeInUp"
-                        data-wow-delay="0.1s">
-                        <div className="service-item rounded pt-3" >
-                            <div className="p-4">
-                                <i
-                                    className="fa-3x fa-solid fa-suitcase-rolling text mb-4"
-                                    style={{color: "#34a4eb"}}></i>
-                                <h5>Packages</h5>
-                                <p></p>
-                            </div>
+                <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div className="service-item-modern">
+                        <div className="service-icon">
+                            <i className="fa fa-suitcase-rolling"></i>
+                        </div>
+                        <div className="service-content">
+                            <h5>Travel Packages</h5>
+                            <p>Curated travel packages designed to provide the best value and unforgettable experiences.</p>
+                            <a href="#" className="service-link">Learn More <i className="fa fa-arrow-right"></i></a>
                         </div>
                     </div>
-                    <div className="col-lg-3 col-sm-6 wow fadeInUp"
-                        data-wow-delay="0.3s">
-                        <div className="service-item rounded pt-3">
-                            <div className="p-4">
-                                <i
-                                    className="fa-3x fa-solid fa-people-group text mb-4"
-                                    style={{color: "#34a4eb"}}></i>
-                                <h5>MICE</h5>
-                                <p></p>
-                            </div>
+                </div>
+                <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div className="service-item-modern">
+                        <div className="service-icon">
+                            <i className="fa fa-people-group"></i>
+                        </div>
+                        <div className="service-content">
+                            <h5>MICE Tourism</h5>
+                            <p>Meetings, Incentives, Conferences, and Exhibitions - specialized business travel solutions.</p>
+                            <a href="#" className="service-link">Learn More <i className="fa fa-arrow-right"></i></a>
                         </div>
                     </div>
-                    <div className="col-lg-3 col-sm-6 wow fadeInUp"
-                        data-wow-delay="0.5s">
-                        <div className="service-item rounded pt-3">
-                            <div className="p-4">
-                                <i className="fa-3x fa-solid fa-plane text mb-4"
-                                    style={{color: "#34a4eb"}}></i>
-                                <h5>Flights</h5>
-                                <p> </p>
-                            </div>
+                </div>
+                <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div className="service-item-modern">
+                        <div className="service-icon">
+                            <i className="fa fa-plane"></i>
+                        </div>
+                        <div className="service-content">
+                            <h5>Flight Booking</h5>
+                            <p>Best deals on domestic and international flights with major airlines worldwide.</p>
+                            <a href="#" className="service-link">Learn More <i className="fa fa-arrow-right"></i></a>
                         </div>
                     </div>
-                    <div className="col-lg-3 col-sm-6 wow fadeInUp"
-                        data-wow-delay="0.7s">
-                        <div className="service-item rounded pt-3">
-                            <div className="p-4">
-                                <i className="fa-3x fa-brands fa-cc-visa text mb-4"
-                                    style={{color: "#34a4eb"}}></i>
-                                <h5>Visa</h5>
-                                <p> </p>
-                            </div>
+                </div>
+                <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div className="service-item-modern">
+                        <div className="service-icon">
+                            <i className="fa fa-cc-visa"></i>
                         </div>
-                    </div>           
+                        <div className="service-content">
+                            <h5>Visa Services</h5>
+                            <p>Complete visa assistance and documentation support for hassle-free international travel.</p>
+                            <a href="#" className="service-link">Learn More <i className="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>           
             </div>
         </div>
     </div>
