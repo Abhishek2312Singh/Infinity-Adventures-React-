@@ -15,6 +15,7 @@ import {
 import About from './components/About';
 import React from 'react';
 import Services from './components/Services';
+import HomeServices from './components/HomeServices';
 import HomeAbout from './components/HomeAbout';
 import PopularDestination from './components/PopularDestination';
 import Packages from './components/Packages';
@@ -46,7 +47,7 @@ function App() {
             <HomeAbout/>
             <PopularDestination/>
             <Packages/>
-            <Services/>
+            <HomeServices/>
             <Process/>
           </React.Fragment>
           }
